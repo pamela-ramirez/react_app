@@ -1,52 +1,74 @@
 .item-card {
-  border: 1px solid #ddd;      /* Borde suave */
-  border-radius: 12px;         /* Bordes redondeados */
-  padding: 16px;
-  margin: 12px;
-  background-color: #fafafa;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para efecto de "card" */
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  width: 240px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .item-card:hover {
-  transform: scale(1.02); /* efecto al pasar el mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
-.item-title {
-  font-size: 1.4rem;
+
+.item-card-title {
+  font-size: 1rem;
   font-weight: 600;
   color: #333;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  height: 45px; 
+  overflow: hidden;
 }
 
-.item-image {
-  max-width: 100%;
-  height: 150px;
+
+.item-card-img {
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  margin: 10px 0;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.item-price {
-  font-size: 1.2rem;
+.item-card:hover .item-card-img {
+  transform: scale(1.05);
+}
+
+
+.item-card-price {
+  font-size: 0.95rem;
   color: #444;
-  margin: 10px 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
-.item-button-container {
-  margin-top: 12px;
-}
 
 .item-button {
-  background-color: #270395; 
-  color: white;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  padding: 10px 16px;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .item-button:hover {
-  background-color: #458ca0;
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+
+.item-card-buttons {
+  margin-top: auto;
 }

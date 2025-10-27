@@ -1,9 +1,9 @@
 import products from "../../data/products";
 import Item from "../Item/Item";
-import getMockApiData, { getProductsByCategory } from "../../data/mockApi";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./ItemListContainer.css";
+import { getProducts, getProductsByCategory } from "../../data/fireStore";
 
 function ItemListContainer(props) {
   const [products, setProducts] = useState([]);
@@ -18,7 +18,7 @@ function ItemListContainer(props) {
         });
       }
     } else {
-      getMockApiData()
+      getProducts()
         .then((productList) => {
           console.log("Promesa terminada");
           setProducts(productList);
@@ -37,11 +37,11 @@ function ItemListContainer(props) {
       <h2>{props.greeting}</h2>
 
       {products.length === 0 ? (
-        <p className="loading">Cargando...</p>
+        <p className="item-list-container__loading">Cargando...</p>
       ) : (
         <div>
           <h4>Nuestros Productos</h4>
-          <div className="products-grid">
+          <div className="item-grid">
             {products.map((item) => (
               <Item {...item} key={item.id} />
             ))}

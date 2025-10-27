@@ -5,7 +5,7 @@ import { Link } from "react-router";
 function NavBar() {
   return (
     <nav>
-      <Link to="/">miTienda</Link>
+        <Link to="/"><span>miTienda.com</span></Link>
       <ul>
         <Link to="/category/woman">
           <li>Women's clothing</li>
